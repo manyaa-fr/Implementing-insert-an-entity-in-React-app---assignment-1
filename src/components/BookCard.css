@@ -1,5 +1,8 @@
 /* src/components/BookCard.css */
-
+.body 
+{
+  width: 100%;
+}
 .book-card {
   display: flex;
   flex-direction: column;

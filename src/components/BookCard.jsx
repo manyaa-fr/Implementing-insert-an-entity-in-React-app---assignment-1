@@ -1,14 +1,24 @@
 // src/components/BookCard.jsx
 
-import React from "react";
+import React, { useState } from "react";
 import "./BookCard.css"; // Import the CSS for styling
 
 const BookCard = ({ book }) => {
   const { title, author, description, coverImage } = book;
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
 
   return (
     <div className="book-card">
-      <img src={coverImage} alt={`${title} cover`} className="book-cover" />
+      <img 
+        src={imageError ? "https://placehold.co/200x300/lightgray/darkgray?text=No+Cover" : coverImage} 
+        alt={`${title} cover`} 
+        className="book-cover"
+        onError={handleImageError}
+      />
       <div className="book-details">
         <h2 className="book-title">{title}</h2>
         <h3 className="book-author">by {author}</h3>

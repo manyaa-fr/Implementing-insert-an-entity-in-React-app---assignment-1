@@ -1,8 +1,8 @@
 // src/components/Home.jsx
 
 import React from "react";
-import BookCard from "./components/BookCard";
-import books from "./booksData";
+import BookCard from "./components/BookCard.jsx";
+import books from "./booksData.jsx";
 import "./Home.css"; // Import the CSS for styling
 
 const Home = () => {
